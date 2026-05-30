@@ -11,8 +11,16 @@ import profileRoutes from './profileRoutes.js';
 import recordRoutes from './recordRoutes.js';
 import reportRoutes from './reportRoutes.js';
 import searchRoutes from './searchRoutes.js';
+import { registeredRoutes } from './routeDiagnostics.js';
 
 const router = express.Router();
+
+router.get('/routes', (_req, res) => {
+  res.json({
+    service: 'kubera-api',
+    routes: registeredRoutes
+  });
+});
 
 router.use('/auth', authRoutes);
 router.use('/dashboard', dashboardRoutes);
