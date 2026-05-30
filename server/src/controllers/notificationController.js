@@ -137,6 +137,12 @@ const generatedNotifications = async (owner) => {
 export const listNotifications = async (req, res, next) => {
   try {
     if (!isDatabaseReady()) {
+      if (process.env.NODE_ENV === 'production') {
+        const error = new Error('Database is not connected. Please check MONGODB_URI and MongoDB Atlas network access.');
+        error.statusCode = 503;
+        throw error;
+      }
+
       const items = [
         makeNotification({
           id: 'system-local-demo',

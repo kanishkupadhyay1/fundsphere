@@ -20,6 +20,12 @@ export const register = async (req, res, next) => {
     const { fullName, email, mobile, password } = req.body;
 
     if (!isDatabaseReady()) {
+      if (process.env.NODE_ENV === 'production') {
+        const error = new Error('Database is not connected. Please check MONGODB_URI and MongoDB Atlas network access.');
+        error.statusCode = 503;
+        throw error;
+      }
+
       if (demoUsers.has(email)) {
         const error = new Error('Email is already registered in this local demo session');
         error.statusCode = 409;
@@ -59,6 +65,12 @@ export const login = async (req, res, next) => {
     const { email, password } = req.body;
 
     if (!isDatabaseReady()) {
+      if (process.env.NODE_ENV === 'production') {
+        const error = new Error('Database is not connected. Please check MONGODB_URI and MongoDB Atlas network access.');
+        error.statusCode = 503;
+        throw error;
+      }
+
       const user = demoUsers.get(email);
       if (!user || user.password !== password) {
         const error = new Error('Invalid email or password');

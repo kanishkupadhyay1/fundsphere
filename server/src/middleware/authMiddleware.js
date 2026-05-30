@@ -24,6 +24,12 @@ export const protect = async (req, _res, next) => {
     const decoded = jwt.verify(token, jwtSecret());
 
     if (!isDatabaseReady()) {
+      if (process.env.NODE_ENV === 'production') {
+        const error = new Error('Database is not connected. Please check MONGODB_URI and MongoDB Atlas network access.');
+        error.statusCode = 503;
+        throw error;
+      }
+
       req.user = {
         _id: decoded.id,
         id: decoded.id,

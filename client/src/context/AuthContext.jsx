@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import api from '../lib/api.js';
+import { getApiErrorMessage } from '../lib/errors.js';
 
 const AuthContext = createContext(null);
 
@@ -16,7 +17,8 @@ export const AuthProvider = ({ children }) => {
     api.get('/auth/me').then((res) => {
       setUser(res.data);
       localStorage.setItem('kubera_user', JSON.stringify(res.data));
-    }).catch(() => {
+    }).catch((error) => {
+      console.warn(getApiErrorMessage(error));
       localStorage.removeItem('kubera_token');
       localStorage.removeItem('kubera_user');
       setUser(null);

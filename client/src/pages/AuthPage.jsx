@@ -5,6 +5,7 @@ import { FaLock, FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import Logo from '../components/common/Logo.jsx';
 import FormField from '../components/forms/FormField.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
+import { getApiErrorMessage } from '../lib/errors.js';
 
 export default function AuthPage({ mode }) {
   const isRegister = mode === 'register';
@@ -22,7 +23,7 @@ export default function AuthPage({ mode }) {
       else await login({ email: values.email, password: values.password, rememberMe: values.rememberMe });
       navigate('/');
     } catch (err) {
-      setError(err.response?.data?.message || 'Unable to continue. Please check the details.');
+      setError(getApiErrorMessage(err));
     }
   };
 

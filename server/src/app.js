@@ -30,12 +30,24 @@ app.use(
   })
 );
 app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) return callback(null, true);
+  cors((req, callback) => {
+    const origin = req.header('Origin');
+    const requestHost = req.get('host');
+
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, { origin: true, credentials: true });
+    }
+
+    try {
+      const originHost = new URL(origin).host;
+      if (process.env.NODE_ENV === 'production' && originHost === requestHost) {
+        return callback(null, { origin: true, credentials: true });
+      }
+    } catch {
       return callback(new Error('Not allowed by CORS'));
-    },
-    credentials: true
+    }
+
+    return callback(new Error('Not allowed by CORS'));
   })
 );
 app.use(
