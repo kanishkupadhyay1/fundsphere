@@ -1,0 +1,17 @@
+{
+  "name": "kubera",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kubera - One Place for Every Financial Record",
+  "scripts": {
+    "install:all": "npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "postinstall": "npm run install:all",
+    "build": "npm run build --prefix client",
+    "render-build": "npm run build",
+    "start": "npm start --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
