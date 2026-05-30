@@ -13,6 +13,7 @@ MONGODB_URI=<your MongoDB Atlas connection string>
 JWT_SECRET=<long random production secret>
 JWT_EXPIRES_IN=7d
 CLIENT_URL=<your deployed app URL>
+VITE_API_URL=https://kubera-api.onrender.com/api
 CLOUDINARY_CLOUD_NAME=<optional, required for document upload>
 CLOUDINARY_API_KEY=<optional, required for document upload>
 CLOUDINARY_API_SECRET=<optional, required for document upload>
@@ -33,6 +34,12 @@ For Render, the typical settings are:
 ```bash
 Build Command: npm install && npm run build
 Start Command: npm start
+```
+
+If the frontend and backend are deployed separately, set `VITE_API_URL` on the frontend hosting platform before building. For this deployment:
+
+```bash
+VITE_API_URL=https://kubera-api.onrender.com/api
 ```
 
 ## Local Production Check
