@@ -7,7 +7,7 @@ const port = process.env.PORT || 5000;
 await connectDB();
 
 const server = app.listen(port, () => {
-  console.log(`Kubera API running on port ${port}`);
+  console.log(`FundSphere API running on port ${port}`);
 });
 
 process.on('unhandledRejection', (error) => {

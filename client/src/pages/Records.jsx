@@ -82,9 +82,9 @@ export default function Records() {
                   <td className="px-5 py-4">{record.type}</td>
                   <td className="px-5 py-4">{record.institution}</td>
                   <td className="px-5 py-4 font-bold">{formatCurrency(record.amount)}</td>
-                  <td className="px-5 py-4">{record.nominee || <span className="text-kubera-red">Missing</span>}</td>
+                  <td className="px-5 py-4">{record.nominee || <span className="text-fundsphere-red">Missing</span>}</td>
                   <td className="px-5 py-4">{formatDate(record.maturityDate || record.dynamicFields?.nextDueDate)}</td>
-                  <td className="px-5 py-4"><span className="status-pill bg-green-50 text-kubera-green">{record.status}</span></td>
+                  <td className="px-5 py-4"><span className="status-pill bg-green-50 text-fundsphere-green">{record.status}</span></td>
                 </tr>
               ))}
             </tbody>
@@ -94,7 +94,7 @@ export default function Records() {
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {data.items.map((record) => (
             <article className="card p-5" key={record._id}>
-              <p className="text-sm font-bold text-kubera-blue">{record.type}</p>
+              <p className="text-sm font-bold text-fundsphere-blue">{record.type}</p>
               <h2 className="mt-2 text-xl font-bold text-slate-950">{record.recordName}</h2>
               <p className="mt-1 text-slate-600">{record.institution}</p>
               <p className="mt-4 text-2xl font-bold">{formatCurrency(record.amount)}</p>

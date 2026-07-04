@@ -48,7 +48,7 @@ textarea:focus-visible {
   }
 
   .btn-primary {
-    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-kubera-blue px-5 py-3 text-base font-semibold text-white transition hover:bg-blue-950 disabled:cursor-not-allowed disabled:opacity-60;
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg bg-fundsphere-blue px-5 py-3 text-base font-semibold text-white transition hover:bg-blue-950 disabled:cursor-not-allowed disabled:opacity-60;
   }
 
   .btn-secondary {

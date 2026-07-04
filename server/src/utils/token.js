@@ -5,7 +5,7 @@ const jwtSecret = () => {
   if (process.env.NODE_ENV === 'production') {
     throw new Error('JWT_SECRET must be configured in production');
   }
-  return 'kubera-local-development-secret';
+  return 'fundsphere-local-development-secret';
 };
 
 export const signToken = (user) =>

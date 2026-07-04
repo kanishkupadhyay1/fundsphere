@@ -1,8 +1,8 @@
 export default function StatCard({ icon: Icon, label, value, tone = 'blue' }) {
   const tones = {
-    blue: 'bg-blue-50 text-kubera-blue',
-    green: 'bg-green-50 text-kubera-green',
-    red: 'bg-red-50 text-kubera-red',
+    blue: 'bg-blue-50 text-fundsphere-blue',
+    green: 'bg-green-50 text-fundsphere-green',
+    red: 'bg-red-50 text-fundsphere-red',
     yellow: 'bg-amber-50 text-amber-700'
   };
 

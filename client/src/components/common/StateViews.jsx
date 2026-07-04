@@ -17,7 +17,7 @@ export const EmptyState = ({ title = 'No records yet', message = 'Add your first
 );
 
 export const ErrorState = ({ message = 'Unable to load this section.' }) => (
-  <div className="rounded-lg border border-red-200 bg-red-50 p-5 text-base font-semibold text-kubera-red" role="alert">
+  <div className="rounded-lg border border-red-200 bg-red-50 p-5 text-base font-semibold text-fundsphere-red" role="alert">
     {message}
   </div>
 );

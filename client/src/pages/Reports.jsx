@@ -26,7 +26,7 @@ export default function Reports() {
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {data.items?.map((report) => (
           <article className="card p-5" key={report._id}>
-            <p className="text-sm font-bold text-kubera-blue">{report.type}</p>
+            <p className="text-sm font-bold text-fundsphere-blue">{report.type}</p>
             <h2 className="mt-2 text-xl font-bold">{report.title}</h2>
             <p className="mt-2 text-slate-600">Generated: {formatDate(report.createdAt)}</p>
           </article>

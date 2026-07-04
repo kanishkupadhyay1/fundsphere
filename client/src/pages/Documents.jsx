@@ -39,7 +39,7 @@ export default function Documents() {
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {data.items?.map((document) => (
           <article className="card p-5" key={document._id}>
-            <p className="text-sm font-bold text-kubera-blue">{document.type}</p>
+            <p className="text-sm font-bold text-fundsphere-blue">{document.type}</p>
             <h2 className="mt-2 text-xl font-bold">{document.name}</h2>
             <p className="mt-2 text-slate-600">Expiry: {formatDate(document.expiryDate)}</p>
             <div className="mt-5 flex gap-3">

@@ -26,7 +26,7 @@ export default function Institutions() {
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {data.items?.map((institution) => (
           <article className="card p-5" key={institution._id}>
-            <FaBuilding className="text-2xl text-kubera-blue" />
+            <FaBuilding className="text-2xl text-fundsphere-blue" />
             <h2 className="mt-3 text-xl font-bold">{institution.name}</h2>
             <p className="mt-1 text-slate-600">{institution.type} | {institution.branch || 'No branch'}</p>
             <p className="mt-3 font-semibold">{institution.contactDetails?.phone || 'No contact number'}</p>

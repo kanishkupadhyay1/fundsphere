@@ -17,7 +17,7 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const clientDistPath = path.resolve(__dirname, '../../client/dist');
-const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:5173')
+const allowedOrigins = (process.env.CLIENT_URL || '')
   .split(',')
   .map((origin) => origin.trim())
   .filter(Boolean);
@@ -71,7 +71,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 app.get('/health', (_req, res) => {
-  res.json({ status: 'ok', service: 'kubera-api' });
+  res.json({ status: 'ok', service: 'fundsphere-api' });
 });
 
 app.use('/api', routes);
@@ -88,3 +88,4 @@ app.use(notFound);
 app.use(errorHandler);
 
 export default app;
+

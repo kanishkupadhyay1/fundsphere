@@ -31,7 +31,7 @@ export default function DueCenter() {
         {sections.map(([key, title]) => (
           <section className="card p-5" key={key}>
             <div className="flex items-center gap-3">
-              <FaClock className="text-kubera-blue" />
+              <FaClock className="text-fundsphere-blue" />
               <h2 className="section-title">{title}</h2>
             </div>
             <div className="mt-4 grid gap-3">

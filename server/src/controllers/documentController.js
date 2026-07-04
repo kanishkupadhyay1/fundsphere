@@ -8,7 +8,7 @@ export const documentCrud = createCrudController(Document, ['name', 'type']);
 const uploadBuffer = (file) =>
   new Promise((resolve, reject) => {
     const stream = cloudinary.uploader.upload_stream(
-      { folder: 'kubera/documents', resource_type: 'auto' },
+      { folder: 'fundsphere/documents', resource_type: 'auto' },
       (error, result) => (error ? reject(error) : resolve(result))
     );
     Readable.from(file.buffer).pipe(stream);

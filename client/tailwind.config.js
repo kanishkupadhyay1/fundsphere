@@ -3,7 +3,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        kubera: {
+        fundsphere: {
           blue: '#1E3A8A',
           green: '#16A34A',
           red: '#DC2626',

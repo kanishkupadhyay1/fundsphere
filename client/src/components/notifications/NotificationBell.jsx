@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaBell, FaCheckDouble } from 'react-icons/fa';
 import api from '../../lib/api.js';
 
-const readStorageKey = 'kubera_read_notifications';
+const readStorageKey = 'fundsphere_read_notifications';
 
 const readIds = () => {
   try {
@@ -28,10 +28,10 @@ const storeReadIds = (idsToAdd) => {
 
 const toneClass = (severity) => {
   const tones = {
-    info: 'border-green-200 bg-green-50 text-kubera-green',
-    success: 'border-green-200 bg-green-50 text-kubera-green',
+    info: 'border-green-200 bg-green-50 text-fundsphere-green',
+    success: 'border-green-200 bg-green-50 text-fundsphere-green',
     warning: 'border-amber-200 bg-amber-50 text-amber-700',
-    urgent: 'border-red-200 bg-red-50 text-kubera-red'
+    urgent: 'border-red-200 bg-red-50 text-fundsphere-red'
   };
   return tones[severity] || tones.info;
 };
@@ -133,7 +133,7 @@ export default function NotificationBell() {
       <button
         ref={buttonRef}
         type="button"
-        className="relative flex h-12 w-12 items-center justify-center rounded-lg border border-slate-300 bg-white text-kubera-blue"
+        className="relative flex h-12 w-12 items-center justify-center rounded-lg border border-slate-300 bg-white text-fundsphere-blue"
         aria-label={`Notifications${unreadCount ? `, ${unreadCount} unread` : ''}`}
         aria-haspopup="dialog"
         aria-expanded={open}
@@ -141,7 +141,7 @@ export default function NotificationBell() {
       >
         <FaBell aria-hidden="true" />
         {unreadCount > 0 && (
-          <span className="absolute -right-1 -top-1 flex min-h-5 min-w-5 items-center justify-center rounded-full bg-kubera-red px-1 text-xs font-bold text-white">
+          <span className="absolute -right-1 -top-1 flex min-h-5 min-w-5 items-center justify-center rounded-full bg-fundsphere-red px-1 text-xs font-bold text-white">
             {unreadCount > 99 ? '99+' : unreadCount}
           </span>
         )}
@@ -185,7 +185,7 @@ export default function NotificationBell() {
                         <p className="font-bold text-slate-950">{notification.title}</p>
                         <p className="mt-1 text-sm leading-6 text-slate-700">{notification.message}</p>
                       </div>
-                      {!notification.isRead && <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-kubera-red" aria-label="Unread" />}
+                      {!notification.isRead && <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-fundsphere-red" aria-label="Unread" />}
                     </div>
                     <p className="mt-2 text-sm font-semibold text-slate-600">{formatDateTime(notification.dueDate || notification.createdAt)}</p>
                   </button>

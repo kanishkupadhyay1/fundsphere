@@ -26,10 +26,10 @@ export default function FamilyAccess() {
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {data.items?.map((member) => (
           <article className="card p-5" key={member._id}>
-            <FaUserFriends className="text-2xl text-kubera-blue" />
+            <FaUserFriends className="text-2xl text-fundsphere-blue" />
             <h2 className="mt-3 text-xl font-bold">{member.name}</h2>
             <p className="text-slate-600">{member.relationship} | {member.email}</p>
-            <p className="mt-3 status-pill bg-blue-50 text-kubera-blue"><FaEye className="mr-2" /> View Only</p>
+            <p className="mt-3 status-pill bg-blue-50 text-fundsphere-blue"><FaEye className="mr-2" /> View Only</p>
           </article>
         ))}
       </div>

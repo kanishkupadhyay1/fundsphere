@@ -24,7 +24,7 @@ export default function Nominees() {
         ].map(([title, rows, tone]) => (
           <section className="card p-5" key={title}>
             <div className="flex items-center gap-3">
-              <FaIdBadge className={tone === 'green' ? 'text-kubera-green' : 'text-kubera-red'} />
+              <FaIdBadge className={tone === 'green' ? 'text-fundsphere-green' : 'text-fundsphere-red'} />
               <h2 className="section-title">{title}</h2>
             </div>
             <div className="mt-4 space-y-3">

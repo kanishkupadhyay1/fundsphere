@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: kubera-api
+    name: fundsphere-api
     env: node
     rootDir: server
     buildCommand: npm install
@@ -15,4 +15,4 @@ services:
       - key: JWT_EXPIRES_IN
         value: 7d
       - key: CLIENT_URL
-        value: https://kubera-mu.vercel.app
+        sync: false

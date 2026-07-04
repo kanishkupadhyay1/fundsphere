@@ -31,7 +31,7 @@ const mobileLinks = [
 
 const linkClass = ({ isActive }) =>
   `flex min-h-12 items-center gap-3 rounded-lg px-4 py-3 text-base font-semibold transition ${
-    isActive ? 'bg-kubera-blue text-white' : 'text-slate-700 hover:bg-blue-50 hover:text-kubera-blue'
+    isActive ? 'bg-fundsphere-blue text-white' : 'text-slate-700 hover:bg-blue-50 hover:text-fundsphere-blue'
   }`;
 
 export default function AppLayout() {
@@ -44,7 +44,7 @@ export default function AppLayout() {
   };
 
   return (
-    <div className="min-h-screen bg-kubera-gray">
+    <div className="min-h-screen bg-fundsphere-gray">
       <aside className="fixed left-0 top-0 z-30 hidden h-screen w-72 border-r border-slate-200 bg-white p-5 lg:block">
         <Logo />
         <nav className="mt-8 space-y-1" aria-label="Main navigation">
@@ -70,7 +70,7 @@ export default function AppLayout() {
             <div className="flex items-center gap-3">
               <NotificationBell />
               <div className="hidden text-right sm:block">
-                <p className="font-bold text-slate-950">{user?.fullName || 'Kubera User'}</p>
+                <p className="font-bold text-slate-950">{user?.fullName || 'FundSphere User'}</p>
                 <p className="text-sm capitalize text-slate-600">{user?.role || 'owner'}</p>
               </div>
               <button onClick={handleLogout} className="btn-secondary" aria-label="Logout">
@@ -89,7 +89,7 @@ export default function AppLayout() {
 
       <nav className="fixed bottom-0 left-0 right-0 z-40 grid grid-cols-6 border-t border-slate-200 bg-white lg:hidden" aria-label="Mobile navigation">
         {mobileLinks.map((item) => (
-          <NavLink key={item.to} to={item.to} end={item.to === '/'} className={({ isActive }) => `flex min-h-16 flex-col items-center justify-center gap-1 text-xs font-bold ${isActive ? 'text-kubera-blue' : 'text-slate-600'}`}>
+          <NavLink key={item.to} to={item.to} end={item.to === '/'} className={({ isActive }) => `flex min-h-16 flex-col items-center justify-center gap-1 text-xs font-bold ${isActive ? 'text-fundsphere-blue' : 'text-slate-600'}`}>
             <item.icon className="text-lg" aria-hidden="true" />
             <span>{item.label}</span>
           </NavLink>

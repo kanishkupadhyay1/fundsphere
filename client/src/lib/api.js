@@ -1,12 +1,18 @@
 import axios from 'axios';
 
+export const normalizeApiBaseUrl = (url) => {
+  const baseUrl = (url || '').replace(/\/+$/, '');
+  if (!baseUrl) return '/api';
+  return baseUrl.endsWith('/api') ? baseUrl : `${baseUrl}/api`;
+};
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:5000/api' : 'https://kubera-api.onrender.com/api'),
+  baseURL: normalizeApiBaseUrl(import.meta.env.VITE_API_URL),
   withCredentials: true
 });
 
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('kubera_token');
+  const token = localStorage.getItem('fundsphere_token');
   if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });

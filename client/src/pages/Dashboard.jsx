@@ -38,7 +38,7 @@ export default function Dashboard() {
 
       <section className="card p-5">
         <div className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-50 text-kubera-red"><FaBell aria-hidden="true" /></div>
+          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-50 text-fundsphere-red"><FaBell aria-hidden="true" /></div>
           <div>
             <h2 className="section-title">Action Required</h2>
             <p className="text-slate-600">Maturities, premiums, loans, nominees, documents, and missing information needing attention.</p>

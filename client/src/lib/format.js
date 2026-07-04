@@ -11,7 +11,7 @@ export const formatDate = (value) => {
 };
 
 export const dueTone = (days) => {
-  if (days < 0) return 'bg-red-50 text-kubera-red border-red-200';
+  if (days < 0) return 'bg-red-50 text-fundsphere-red border-red-200';
   if (days <= 7) return 'bg-amber-50 text-amber-700 border-amber-200';
-  return 'bg-green-50 text-kubera-green border-green-200';
+  return 'bg-green-50 text-fundsphere-green border-green-200';
 };

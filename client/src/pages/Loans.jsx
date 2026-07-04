@@ -44,8 +44,8 @@ export default function Loans() {
         {data.items?.map((loan) => (
           <article className="card p-5" key={loan._id}>
             <div className="flex justify-between gap-3">
-              <div><p className="font-bold text-kubera-blue">{loan.direction}</p><h2 className="text-2xl font-bold">{loan.personName}</h2></div>
-              <span className="status-pill bg-green-50 text-kubera-green">{loan.status}</span>
+              <div><p className="font-bold text-fundsphere-blue">{loan.direction}</p><h2 className="text-2xl font-bold">{loan.personName}</h2></div>
+              <span className="status-pill bg-green-50 text-fundsphere-green">{loan.status}</span>
             </div>
             <div className="mt-4 grid gap-3 sm:grid-cols-3">
               <p>Principal <strong className="block">{formatCurrency(loan.principalAmount)}</strong></p>
